@@ -1,7 +1,7 @@
 .vscode/settings.json
-playwright-report/*
-node_modules/*
-test-results/*
-allure-results/*
-tests/temp
-tests/temp/*
+playwright-report
+node_modules
+test-results
+allure-results
+tests/E2E/temp
+allure-report/*
