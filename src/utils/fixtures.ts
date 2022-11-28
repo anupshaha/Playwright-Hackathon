@@ -1,5 +1,4 @@
 import { test as baseTest } from '@playwright/test';
-
 import HeaderSection from '@PMcomponents/HeaderSection';
 import LoginPage from '@PMpages/LoginPage';
 import SecurityPage from '@PMpages/SecurityPage';
@@ -36,10 +35,6 @@ const test = baseTest.extend<{
     },
     securityPage: async ({ page }, use) => {
         await use(new SecurityPage(page));
-<<<<<<< HEAD
-    }
-
-=======
     },
     cmLoginPage: async ({ page }, use) => {
         await use(new CMLoginPage(page));
@@ -53,13 +48,9 @@ const test = baseTest.extend<{
     cmLandingPage: async ({ page }, use) => {
         await use(new CMLandingPage(page));
     },
-<<<<<<< HEAD
->>>>>>> e17109430e0af2b38ce099545535799b8bbff951
-=======
     cmAPIDetailsPage: async ({ page }, use) => {
         await use(new CM_API_DetailsPage(page));
     },
->>>>>>> 240dafb70ed01f57105b16af7ea87b46558fccd3
 });
 
 export default test;
