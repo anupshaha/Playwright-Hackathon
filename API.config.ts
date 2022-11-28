@@ -2,7 +2,8 @@ import type { PlaywrightTestConfig } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
     testDir: `tests/API/`,
-    timeout: 30 * 1000,
+    globalSetup: `src/utils/globalSetup.ts`,
+    timeout: 30 * 10000,
     reporter: [
         [`list`], 
         [`html`], 
@@ -13,10 +14,12 @@ const config: PlaywrightTestConfig = {
         }]],
     use: {
         // All requests we send go to this API endpoint.
-        baseURL: `http://api10014live.localhost:9905/`,
+        baseURL: `http://automation2022-1-poll-mysql.aws.akana.roguewave.com:7900/`,
         extraHTTPHeaders: {
-            'Accept': `application/json`
+            'Accept': `application/json`,
+            'Content-Type' : 'application/json'
         },
+        storageState: 'storageState.json'
     }
 };
 export default config;

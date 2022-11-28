@@ -21,7 +21,7 @@ const test = baseTest.extend<{
     },
     securityPage: async ({ page }, use) => {
         await use(new SecurityPage(page));
-    },
+    }
 
 });
 
