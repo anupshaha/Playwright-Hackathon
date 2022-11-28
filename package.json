@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test:API": "npx playwright test --config=./API.config.ts",
-    "test:chrome": "cross-env test_env=qa-82 npx playwright test --config=./playwright.config.ts --project=Chromium",
-    "test:webkit": "cross-env test_env=local npx playwright test --config=./playwright.config.ts --project=Webkit",
-    "test:firefox": "cross-env test_env=local npx playwright test --config=./playwright.config.ts --project=Firefox",
+    "test:chrome": "cross-env test_env=qa-2 npx playwright test --config=./playwright.config.ts --project=Chromium",
+    "test:webkit": "cross-env test_env=qa-2 npx playwright test --config=./playwright.config.ts --project=Webkit",
+    "test:firefox": "cross-env test_env=qa-2 npx playwright test --config=./playwright.config.ts --project=Firefox",
     "test:all": "npx playwright test --config=./playwright.config.ts",
     "allure:generate": "allure generate ./allure-results --clean",
     "allure:open": "allure open ./allure-report",

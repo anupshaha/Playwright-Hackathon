@@ -1,7 +1,8 @@
-import test from '@utils/fixtures';
+import test from '@utils/Fixtures';
 import { expect } from '@playwright/test';
+import ENV from '@utils/ENV';
 import * as fs from 'fs';
-import ENV from '@utils/env';
+
 
 
 test.describe.parallel(`PM Portal POC`, () => {
@@ -9,7 +10,7 @@ test.describe.parallel(`PM Portal POC`, () => {
     // const ENV = JSON.parse(environmentVer);
 
     test.beforeEach(async ({ loginPage }) => {
-        loginPage.visit(ENV.BASE_URL);
+        await loginPage.visit(ENV.pmUrl);
     });
 
     test(`Valid - Login to Policy Manager`, async ({ loginPage, workbenchPage, headerSection }) => {
