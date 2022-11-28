@@ -9,7 +9,7 @@ module.exports = {
   parser: `@typescript-eslint/parser`,
   plugins: [`@typescript-eslint`],
   rules: {
-    quotes: [`error`, `backtick`],
+    quotes: [`warn`, `backtick`],
     semi: [`error`, `always`]
   }
-}
+};

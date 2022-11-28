@@ -17,7 +17,7 @@ export default class HeaderSection {
     }
 
     public async selectHeaderOption(headerOption: string, subHeader?:string){
-        await this.page.waitForLoadState(`load`);
+        await this.page.waitForLoadState(`domcontentloaded`);
         await this.headerframe.getByRole(`link`, { name: headerOption }).waitFor({state:`visible`});
         await this.headerframe.getByRole(`link`, { name: headerOption }).click();
         if(subHeader){
