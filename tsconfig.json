@@ -4,9 +4,21 @@
         "strictNullChecks": false,
         "resolveJsonModule": true,
         "paths": { /* Specify a set of entries that re-map imports to additional lookup locations. */
-        "@PMpages/*": ["src/PM/pages/*"],
-        "@PMcomponents/*": ["src/PM/components/*"],
-        "@utils/*":["src/utils/*"]
-            }
+            "@PMpages/*": [
+                "src/PM/pages/*"
+            ],
+            "@PMcomponents/*": [
+                "src/PM/components/*"
+            ],
+            "@utils/*": [
+                "src/utils/*"
+            ],
+            "@CMpages/*": [
+                "src/CM/pages/*"
+            ],
+            "@CMcomponents/*": [
+                "src/CM/components/*"
+            ],
+        }
     }
 }
