@@ -1,0 +1,6 @@
+.vscode/settings.json
+playwright-report/*
+node_modules/*
+playwright-report/*
+test-results/*
+allure-results/*

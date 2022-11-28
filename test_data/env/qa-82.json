@@ -1,0 +1,5 @@
+{
+    "BASE_URL":"http://akana-qa-82.aws.akana.roguewave.com:7900/",
+    "pmAdminUser":"administrator",
+    "pmAdminPassword":"password"
+}
