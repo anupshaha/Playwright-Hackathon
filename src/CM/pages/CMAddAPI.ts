@@ -28,6 +28,5 @@ export default class CM_Add_API {
             await this.fileRadio.check();
         }
         await this.saveBtn.click();
-        await this.page.pause();
     }
 }
