@@ -15,6 +15,7 @@ export default class CMHeaderSection {
     }
 
     public async selectHeaderOption(menuOption: string, subMenuOption?: string) {
+        await this.page.waitForLoadState("networkidle");
         await this.headerMenuOptions.filter({ hasText: menuOption }).waitFor({state:`attached`});
         await this.headerMenuOptions.filter({ hasText: menuOption }).click();
         if(subMenuOption){

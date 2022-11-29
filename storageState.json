@@ -1,21 +1,21 @@
 {
   "cookies": [
     {
-      "name": "AtmoAuthToken_automation2022-1",
-      "value": "TokenID%3Dfb4dec1b-d311-4a82-b8b8-9e8662a4941d%2Cclaimed_id%3Durn%3Aatmosphere%3Auser%3Aautomation2022-1%3A98f01467-013b-4c3b-bfe2-844ef70474a5%2CissueTime%3D1669721343493%2CexpirationTime%3D1669723203484%2CUserName%3Dadminautomation2022-1%2CUserFDN%3D98f01467-013b-4c3b-bfe2-844ef70474a5%252Eautomation2022-1%2CAttributesIncluded%3Dfalse%2Csig%3DVgYnYparJoo5DYvZU-8WW5RWmltuktDbS80cdD5LmHmAc-cqPglzVf1Tpq1MjA3a0FKUbQRNR5Q9puS50RQaNpy9-kn_lmjDdbVd6HJ1fDoW7jsiqN309uShCoLpNuu-dcekqblpfU-V1zrXxo2HdzBBYZkFuB38_eekolK4I5Wu2ueFscdmFfI0mYE2uwWBuizhQqFhIedNpwZ1icEZuzrTJhpp9dRUNuw-WaYgMhVc-ggMnrhBlgSbqlhyAi_lammWCkFd83fM4xRw2OJ4udpyGNBi4bjAZ-fEEaYx4jqsQZa52ZQoctoqy6jLhjn2sjNc8Ho4UaRTm9EUnfmn5w",
-      "domain": "automation2022-1-poll-mysql.aws.akana.roguewave.com",
+      "name": "AtmoAuthToken_automation",
+      "value": "TokenID%3De74f5973-93d5-4c0b-907f-35927da0ca30%2Cclaimed_id%3Durn%3Aatmosphere%3Auser%3Aautomation%3A22d8937c-58e1-4072-be08-9915e5aa67da%2CissueTime%3D1669728222224%2CexpirationTime%3D1669730082196%2CUserName%3Dadminautomation%2CUserFDN%3D22d8937c-58e1-4072-be08-9915e5aa67da%252Eautomation%2CAttributesIncluded%3Dfalse%2Csig%3DOkVaTWH4xCpvuCJF4V684pNOvrS6Lbu_vk1VIidsangucCKL_jANvavyOjgDQEww2cyzf12qnIvVpe2QvHQxl_op0QSbpyXF7sU9qo2bMLw4aRxCwY9xKmSdpSjHWEx3rXJIm-jT2kOHLnzvveoNHieCjYGKNaal8V9-BGD2JokeT15bv9zu3D_G4bE3vEASLoRtvei_iP5EJc6XuogMPJrnYdGfjOnZZjPrbvw6fl1II8NEoQJti_jbVOXEKfDLTFEg1s2qIdq75xRwnleHQ01ig5BxdF8asj2-DbDcdFuKQlqRHQqPny-oObFCHBrxgRj28yUueQZ_ISBSvwtqtQ",
+      "domain": "automation-mysql80-mongo42.aws.akana.roguewave.com",
       "path": "/",
-      "expires": 1669723203,
+      "expires": 1669730082,
       "httpOnly": true,
       "secure": false,
       "sameSite": "Lax"
     },
     {
-      "name": "Csrf-Token_automation2022-1",
-      "value": "TokenID%3Dfb4dec1b-d311-4a82-b8b8-9e8662a4941d%2CexpirationTime%3D1669723143518%2CUserFDN%3D98f01467-013b-4c3b-bfe2-844ef70474a5%252Eautomation2022-1%2Csig%3DfWNBtVamng556anYINnCA-teJLyMn6EPh_Mdejcc7dKo4HkvpVfitUNgiBm0KHpYHWqIYmCGUSoVtAZA8JLgy-sJrqSe9tdSoBLSzRcPViDunRrOxlErysD_2AANu8M3VIr4wZXIbILjXW4h-rwwf7unakbPEWT7mteUGi2Kwugf40TDviwWcvsly_ew3gU_wCCuCsswuGIAwrhbgq3lnZfVI_owy2zTciGbNq5uSjgTSwwU04D3rDcIzMb4TYD1cqGoQpXEiYb3gkkzXl2yY0yO5l5IXyPnSybWQLzGrssHpYsitxHvXZtzPrSDuvUZ4B5q89ezWLc9i_VcZvtysQ",
-      "domain": "automation2022-1-poll-mysql.aws.akana.roguewave.com",
+      "name": "Csrf-Token_automation",
+      "value": "TokenID%3De74f5973-93d5-4c0b-907f-35927da0ca30%2CexpirationTime%3D1669730022261%2CUserFDN%3D22d8937c-58e1-4072-be08-9915e5aa67da%252Eautomation%2Csig%3DFdGkfKTmOLX6GKUn2H11xnAtuqKiIaroRSsYoDj7-Lo6xmah_5DJvAjeCL040W56t6SdDOXYgyLbXpnX_A-jNlSV2T5zS58U7n25chH0RHtZd9L-vw78ErNSa8RDsDrEyTC9esoZ1qcLd7O4ZJCP-WgRDWKNzdpYRlD4tP-WUvYeATiI1c0xPvHf64TeFTOnZaQb9weXW6uIWZVaOa4N1TSScLUO8cL1qBruetAKzoxujLtgG5Ez6jYEYasNilNUHPUp9sBo4smwhjppiKg6vm1snnCB9CGVncywwOVLN8sblTT434UFt9sI8Rtl0Rabe2vIOXaZvnawEUoIWb6Z_Q",
+      "domain": "automation-mysql80-mongo42.aws.akana.roguewave.com",
       "path": "/",
-      "expires": 1669723203,
+      "expires": 1669730082,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"

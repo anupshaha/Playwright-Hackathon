@@ -26,7 +26,7 @@ test.describe.parallel(`E2E Flow for Hackathon Demo`, () => {
         });
 
         await test.step(`Add APP`, async () => {
-            const randomNum = Math.floor(Math.random() * 900 + 10);
+            const randomNum = Math.floor(Math.random() * 9000 + 10);
             appName = `App1` + randomNum;
             await cmHeaderSection.selectHeaderOption(`Apps`, `Add App`);
             await cmAddAPP.createAPP(appName);
@@ -44,7 +44,8 @@ test.describe.parallel(`E2E Flow for Hackathon Demo`, () => {
     });
 
     test(`Verify API Contract Details`,async({request,baseURL}) =>{
-        const appId1 =  `iZxPcWiZibSkVX9pnI0alR6XXxPI30BaS8VtmMfi.automation2022-1`; 
+        //automation-GWPVq6VoWqpIV7OvjnzqWuhV8SIHb2PZBJXOrAxl
+        const appId1 =  `GWPVq6VoWqpIV7OvjnzqWuhV8SIHb2PZBJXOrAxl.automation`; 
         const _response = await request.get(`${ENV.cmUrl}api/apps/versions/${appId1}/contracts`, {headers:{
             'Accept': `application/json`,
             'Content-Type' : `application/json`
@@ -53,6 +54,6 @@ test.describe.parallel(`E2E Flow for Hackathon Demo`, () => {
         expect(await _response.status()).toBe(200);
         const obj = await _response.json();
         const actual_api_name : string = await obj.channel.item[0].EntityReferences.EntityReference[1].Title;
-        expect(await actual_api_name).toBe(`Swagger_Petstore33`);
+        expect(await actual_api_name).toBe(`Swagger_Petstore1`);
       });
 });

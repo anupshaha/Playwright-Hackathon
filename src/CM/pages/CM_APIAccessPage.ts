@@ -27,7 +27,7 @@ export default class CM_APIAccessPage{
         await this.app_name_list.click();
         await this.next_button.click();
         await this.target_live.click();
-        await this.next_button.click();
+        //await this.next_button.click();
         await this.save_button.click();
         // landing to the api page again
         await this.api_link.waitFor();
