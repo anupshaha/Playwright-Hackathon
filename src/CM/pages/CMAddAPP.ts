@@ -22,8 +22,5 @@ export default class CMAddAPP {
         await this.appName.fill(`App1` + randomNum);
         await this.appVersion.fill(`v1`);
         await this.finishBtn.click();
-        await this.page.pause();
     }
 }
-
-//getByRole('heading', { name: 'Swagger_Petstore2' })
