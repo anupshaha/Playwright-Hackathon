@@ -25,7 +25,7 @@ test.describe.only(`CM Portal POC`, () => {
             await cmAPIDetailsPage.editAPIDetails(`Swagger_Petstore1_` + randomNum);
         });
 
-        await test.step(`Delete API`, async () => {
+        await test(`Delete API`, async () => {
             await cmAPIDetailsPage.selectOptionFromMenu(`Details`);
             await cmAPIDetailsPage.deleteAPI();
         });
@@ -40,6 +40,23 @@ test.describe.only(`CM Portal POC`, () => {
         await test.step(`Add APP`, async () => {
             await cmHeaderSection.selectHeaderOption(`Apps`, `Add App`);
             await cmAddAPP.createAPP();
+        });
+    });
+
+    test(`Create Contract between app and API`, async ({ cmLoginPage, cmLandingPage , cmHeaderSection, cmSearchObjectPage, cmApiOverviewPage, cmAPIAcsessPage , cmApiAppPage }) => {
+        await test.step(`Login with ${ENV.cmAdminUser}`, async () => {
+            await cmLoginPage.login({ username: ENV.cmAdminUser, password: ENV.cmAdminPassword });
+            expect(await cmLandingPage.titleText()).toBe(`Action Dashboard`);
+        });
+
+        await test.step(`Create Contract`, async () => {
+            const api = `newap1234`;
+            const app = 'App189';
+            await cmHeaderSection.selectHeaderOption(`APIs`, `All APIs`);  
+            await cmSearchObjectPage.searchObject(`APIs`, api);
+            await cmApiOverviewPage.landToAPIAcessPage();
+            await cmAPIAcsessPage.connectApp(app);
+            await cmApiAppPage.activateContract();
         });
     });
 });

@@ -22,7 +22,7 @@ export default class CMSearchObjectPage{
         search_keywaord - object name to search, i.e. swagger_petstore
         if search returns multiple object, it will click on 1st item in the searched list
         */
-        await this.object_type.selectOption(object);
+        //await this.object_type.selectOption(object);
         await this.keyward_to_search.click();
         await this.keyward_to_search.fill(search_keywaord);
         await this.Search.click();
