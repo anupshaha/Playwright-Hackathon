@@ -31,7 +31,7 @@ const config: PlaywrightTestConfig = {
     },
     globalSetup: `src/utils/GlobalSetup.ts`,
 
-    testDir:`tests/E2E`,
+    testDir:`tests/E2E/CM`,
 
     projects: [
         {
