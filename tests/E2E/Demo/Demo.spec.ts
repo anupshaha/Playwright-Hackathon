@@ -44,15 +44,15 @@ test.describe.parallel(`E2E Flow for Hackathon Demo`, () => {
     });
 
     test(`Verify API Contract Details`,async({request,baseURL}) =>{
-        let appId1 =  `iZxPcWiZibSkVX9pnI0alR6XXxPI30BaS8VtmMfi.automation2022-1`; 
+        const appId1 =  `iZxPcWiZibSkVX9pnI0alR6XXxPI30BaS8VtmMfi.automation2022-1`; 
         const _response = await request.get(`${ENV.cmUrl}api/apps/versions/${appId1}/contracts`, {headers:{
             'Accept': `application/json`,
-            'Content-Type' : 'application/json'
+            'Content-Type' : `application/json`
         }});
         expect(await _response.ok()).toBeTruthy();
         expect(await _response.status()).toBe(200);
         const obj = await _response.json();
-        let actual_api_name : string = await obj.channel.item[0].EntityReferences.EntityReference[1].Title;
-        expect(await actual_api_name).toBe('Swagger_Petstore33');
+        const actual_api_name : string = await obj.channel.item[0].EntityReferences.EntityReference[1].Title;
+        expect(await actual_api_name).toBe(`Swagger_Petstore33`);
       });
 });

@@ -10,10 +10,10 @@ export default class CM_API_APPPage{
 
     constructor(page: Page) {
         this.page = page;
-        this.apps = page.getByRole('link', { name: ' Apps' });
-        this.connection_access = page.getByRole('button', { name: ' Connection Actions' });
-        this.activate = page.getByRole('menuitem', { name: 'Activate' });
-        this.confirm = page.getByRole('button', { name: 'Confirm' });
+        this.apps = page.getByRole(`link`, { name: ` Apps` });
+        this.connection_access = page.getByRole(`button`, { name: ` Connection Actions` });
+        this.activate = page.getByRole(`menuitem`, { name: `Activate` });
+        this.confirm = page.getByRole(`button`, { name: `Confirm` });
     }
 
     public async activateContract(){

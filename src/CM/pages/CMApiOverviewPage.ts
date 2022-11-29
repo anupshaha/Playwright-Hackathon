@@ -8,8 +8,8 @@ export default class CMApiOverviewPage{
 
     constructor(page: Page) {
         this.page = page;
-        this.overview_link = page.getByRole('link', { name: ' Overview' });
-        this.access_link = page.getByRole('link', { name: 'Access' });
+        this.overview_link = page.getByRole(`link`, { name: `Overview` });
+        this.access_link = page.getByRole(`link`, { name: `Access` });
     }
 
     public async landToAPIAcessPage(){

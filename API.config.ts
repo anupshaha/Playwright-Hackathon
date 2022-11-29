@@ -17,9 +17,9 @@ const config: PlaywrightTestConfig = {
         baseURL: `http://automation2022-1-poll-mysql.aws.akana.roguewave.com:7900/`,
         extraHTTPHeaders: {
             'Accept': `application/json`,
-            'Content-Type' : 'application/json'
+            'Content-Type' : `application/json`
         },
-        storageState: 'storageState.json'
+        storageState: `storageState.json`
     }
 };
 export default config;

@@ -15,10 +15,6 @@ import CMApiOverviewPage from '@CMpages/CMApiOverviewPage';
 import CMSearchObjectPage from '@CMpages/CMSearchObjectPage';
 import CM_APIAccessPage from '@CMpages/CM_APIAccessPage';
 import CM_APP_DetailsPage from '@CMpages/CM_APP_DetailsPage';
-// import ENV from '@utils/ENV';
-// import * as fs from 'fs';
-// import * as path from 'path';
-
 
 const test = baseTest.extend<{
     newCMPortal: CMLoginPage;
@@ -86,21 +82,6 @@ const test = baseTest.extend<{
     cmAPPDetailsPage: async ({ page }, use) => {
         await use(new CM_APP_DetailsPage(page));
     },
-    // storageState: async ({ browser }, use, testInfo) => {
-    //     const fileName = path.join(testInfo.project.outputDir, 'storage-' + testInfo.workerIndex);
-    //     if (!fs.existsSync(fileName)) {
-    //         const page = await browser.newPage({ storageState: undefined });
-    //         const cmLoginPage = new CMLoginPage(page);
-    //         const cmLandingPage = new CMLandingPage(page);
-    //         await cmLoginPage.visit(ENV.cmUrl + `atmosphere/`);
-    //         await cmLoginPage.login({ username: ENV.cmAdminUser, password: ENV.cmAdminPassword });
-    //         expect(await cmLandingPage.titleText()).toBe(`Action Dashboard`);
-    //         await page.context().storageState({ path: fileName });
-    //         await page.close();
-    //     }
-    //     console.log(fileName);
-    //     await use(fileName);
-    // }
 });
 
 export default test;

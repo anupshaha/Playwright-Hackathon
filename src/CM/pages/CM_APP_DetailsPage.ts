@@ -9,8 +9,8 @@ export default class CM_APP_DetailsPage {
     
     constructor(page: Page) {
         this.page = page;
-        this.appIdTxt = page.locator('#apidetails_appid');
-        this.appNameTxt = page.locator('div#ResourceTitle h1');
+        this.appIdTxt = page.locator(`#apidetails_appid`);
+        this.appNameTxt = page.locator(`div#ResourceTitle h1`);
     }
 
     public async getAppId(){

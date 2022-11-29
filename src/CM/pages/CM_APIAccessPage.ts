@@ -12,12 +12,12 @@ export default class CM_APIAccessPage{
 
     constructor(page: Page) {
         this.page = page;
-        this.app_name_fill = page.getByPlaceholder('Search by app name (displays first 10 matches)');
-        this.app_name_list = page.locator("//ul[contains(@id,'ui-id')]/li");
-        this.next_button = page.getByRole('button', { name: 'Next' });
-        this.save_button = page.getByRole('button', { name: 'Save' });
-        this.target_live = page.locator('#Produsction');
-        this.api_link = page.locator('.addapi_name>a');
+        this.app_name_fill = page.getByPlaceholder(`Search by app name (displays first 10 matches)`);
+        this.app_name_list = page.locator(`//ul[contains(@id,'ui-id')]/li`);
+        this.next_button = page.getByRole(`button`, { name: `Next` });
+        this.save_button = page.getByRole(`button`, { name: `Save` });
+        this.target_live = page.locator(`#Produsction`);
+        this.api_link = page.locator(`.addapi_name>a`);
     }
 
     public async connectApp(appName : string){

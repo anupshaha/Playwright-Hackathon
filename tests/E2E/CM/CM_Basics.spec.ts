@@ -53,7 +53,7 @@ test.describe.skip(`CM Portal POC`, () => {
 
         await test.step(`Create Contract`, async () => {
             const api = `newap1234`;
-            const app = 'App189';
+            const app = `App189`;
             await cmHeaderSection.selectHeaderOption(`APIs`, `All APIs`);  
             await cmSearchObjectPage.searchObject(`APIs`, api);
             await cmApiOverviewPage.landToAPIAcessPage();
