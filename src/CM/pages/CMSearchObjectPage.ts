@@ -7,6 +7,7 @@ export default class CMSearchObjectPage{
     private keyward_to_search : Locator;
     private Search : Locator;
     private object_link : Locator;
+    private searchNotFound: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -14,6 +15,7 @@ export default class CMSearchObjectPage{
         this.keyward_to_search = page.getByRole('textbox', { name: 'Enter search keywords' });
         this.Search = page.getByRole('button', { name: ' Search' });
         this.object_link = page.locator('.collection_item_title');
+        this.searchNotFound = page.locator(`div.collection_item_container`);
     }
 
     public async searchObject(object : string, search_keywaord : string){
@@ -26,6 +28,10 @@ export default class CMSearchObjectPage{
         await this.keyward_to_search.click();
         await this.keyward_to_search.fill(search_keywaord);
         await this.Search.click();
+        console.log(await this.searchNotFound.innerText());
+        if((await this.searchNotFound.innerText()).startsWith(`No search results found`)){
+            await this.Search.click();
+        }
         await this.object_link.click();
     }
 }

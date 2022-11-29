@@ -13,8 +13,9 @@ export default class CMApiOverviewPage{
     }
 
     public async landToAPIAcessPage(){
-        await this.overview_link.click();
+        //await this.overview_link.click();
+        await this.access_link.waitFor();
         await this.access_link.click();
     }
-
+    
 }

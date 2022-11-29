@@ -5,5 +5,5 @@ export default class ENV {
     public static cmUrl = process.env.cmUrl;
     public static cmAdminUser = process.env.cmAdminUser;
     public static cmAdminPassword = process.env.cmAdminPassword;
-    public static CM_BASE_URL = process.env.cm_url
+    public static CM_BASE_URL = process.env.cm_url;
 }

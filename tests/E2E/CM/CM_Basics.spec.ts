@@ -1,7 +1,7 @@
 import test, { expect } from '@utils/Fixtures';
 import ENV from '@utils/ENV';
 
-test.describe.only(`CM Portal POC`, () => {
+test.describe.skip(`CM Portal POC`, () => {
 
     test.beforeEach(async ({ cmLoginPage }) => {
         await cmLoginPage.visit(ENV.cmUrl + `atmosphere/`);
@@ -38,12 +38,14 @@ test.describe.only(`CM Portal POC`, () => {
         });
 
         await test.step(`Add APP`, async () => {
+            const randomNum = Math.floor(Math.random() * 90 + 10);
+            const appName = `App1` + randomNum;
             await cmHeaderSection.selectHeaderOption(`Apps`, `Add App`);
-            await cmAddAPP.createAPP();
+            await cmAddAPP.createAPP(appName);
         });
     });
 
-    test(`Create Contract between app and API`, async ({ cmLoginPage, cmLandingPage , cmHeaderSection, cmSearchObjectPage, cmApiOverviewPage, cmAPIAcsessPage , cmApiAppPage }) => {
+    test(`Create Contract between app and API`, async ({ cmLoginPage, cmLandingPage , cmHeaderSection, cmSearchObjectPage, cmApiOverviewPage, cmAPIAccessPage: cmAPIAcsessPage , cmApiAppPage }) => {
         await test.step(`Login with ${ENV.cmAdminUser}`, async () => {
             await cmLoginPage.login({ username: ENV.cmAdminUser, password: ENV.cmAdminPassword });
             expect(await cmLandingPage.titleText()).toBe(`Action Dashboard`);
