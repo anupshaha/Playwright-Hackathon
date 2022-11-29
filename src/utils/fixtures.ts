@@ -7,7 +7,9 @@ import CMLoginPage from '@CMpages/CMLoginPage';
 import CMHeaderSection from '@CMcomponents/CMHeaderSection';
 import CMAddAPI from '@CMpages/CMAddAPI';
 import CMLandingPage from '@CMpages/CMLandingPage';
+import CMAddAPP from '@CMpages/CMAddAPP';
 import CM_API_DetailsPage from '@CMpages/CM_API_DetailsPage';
+
 
 const test = baseTest.extend<{
     newCMPortal: CMLoginPage;
@@ -19,10 +21,11 @@ const test = baseTest.extend<{
     cmHeaderSection: CMHeaderSection;
     cmAddAPI: CMAddAPI;
     cmLandingPage: CMLandingPage;
+    cmAddAPP: CMAddAPP;
     cmAPIDetailsPage: CM_API_DetailsPage;
 }>({
     newCMPortal: async ({ context }, use) => {
-        await use(new CMLoginPage((await context.newPage())));
+        await use(new CMLoginPage(await context.newPage()));
     },
     loginPage: async ({ page }, use) => {
         await use(new LoginPage(page));
@@ -50,6 +53,9 @@ const test = baseTest.extend<{
     },
     cmAPIDetailsPage: async ({ page }, use) => {
         await use(new CM_API_DetailsPage(page));
+    },
+    cmAddAPP: async ({ page }, use) => {
+        await use(new CMAddAPP(page));
     },
 });
 

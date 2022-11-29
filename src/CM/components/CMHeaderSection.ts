@@ -15,14 +15,13 @@ export default class CMHeaderSection {
     }
 
     public async selectHeaderOption(menuOption: string, subMenuOption?: string) {
-        // await this.page.waitForLoadState(`domcontentloaded`);
-        await this.headerMenuOptions.filter({ hasText: `APIs` }).waitFor({state:`attached`});
-        await this.headerMenuOptions.filter({ hasText: `APIs` }).click();
-        // await this.headerMenu.filter({hasText: menuOption}).click();
+        await this.headerMenuOptions.filter({ hasText: menuOption }).waitFor({state:`attached`});
+        await this.headerMenuOptions.filter({ hasText: menuOption }).click();
         if(subMenuOption){
             await this.subMenu.filter({ hasText: subMenuOption}).waitFor({state:`attached`});
             await this.subMenu.filter({ hasText: subMenuOption}).click();
         }
     }
+    
   }
 
