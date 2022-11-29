@@ -1,7 +1,7 @@
 /* This class is created to perform action on API Access page.*/
 import { Locator, Page } from "@playwright/test";
 
-export default class APIAccessPage{
+export default class CM_APIAccessPage{
     private page : Page;
     private app_name_fill : Locator;
     private app_name_list : Locator;
@@ -21,7 +21,9 @@ export default class APIAccessPage{
     }
 
     public async connectApp(appName : string){
-        await this.app_name_fill.fill(appName);
+        await this.app_name_fill.click();
+        await this.app_name_fill.type(appName,{delay:200});
+        // this will select the first app to connect from the list if search result return the multple app options.
         await this.app_name_list.click();
         await this.next_button.click();
         await this.target_live.click();
