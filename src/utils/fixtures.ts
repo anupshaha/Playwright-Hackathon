@@ -14,6 +14,7 @@ import CM_API_APPPage from '@CMpages/CM_API_APPPage';
 import CMApiOverviewPage from '@CMpages/CMApiOverviewPage';
 import CMSearchObjectPage from '@CMpages/CMSearchObjectPage';
 import CM_APIAccessPage from '@CMpages/CM_APIAccessPage';
+import CM_APP_DetailsPage from '@CMpages/CM_APP_DetailsPage';
 // import ENV from '@utils/ENV';
 // import * as fs from 'fs';
 // import * as path from 'path';
@@ -31,10 +32,11 @@ const test = baseTest.extend<{
     cmLandingPage: CMLandingPage;
     cmAddAPP: CMAddAPP;
     cmAPIDetailsPage: CM_API_DetailsPage;
-    cmAPIAcsessPage : CM_APIAccessPage;
+    cmAPIAccessPage : CM_APIAccessPage;
     cmApiOverviewPage: CMApiOverviewPage;
     cmSearchObjectPage : CMSearchObjectPage;
     cmApiAppPage : CM_API_APPPage;
+    cmAPPDetailsPage: CM_APP_DetailsPage;
 }>({
     newCMPortal: async ({ context }, use) => {
         await use(new CMLoginPage(await context.newPage()));
@@ -69,7 +71,7 @@ const test = baseTest.extend<{
     cmAddAPP: async ({ page }, use) => {
         await use(new CMAddAPP(page));
     },
-    cmAPIAcsessPage: async ({ page }, use) => {
+    cmAPIAccessPage: async ({ page }, use) => {
         await use(new CM_APIAccessPage(page));
     },
     cmApiOverviewPage: async ({ page }, use) => {
@@ -80,6 +82,9 @@ const test = baseTest.extend<{
     },
     cmApiAppPage: async ({ page }, use) => {
         await use(new CM_API_APPPage(page));
+    },
+    cmAPPDetailsPage: async ({ page }, use) => {
+        await use(new CM_APP_DetailsPage(page));
     },
     // storageState: async ({ browser }, use, testInfo) => {
     //     const fileName = path.join(testInfo.project.outputDir, 'storage-' + testInfo.workerIndex);

@@ -23,14 +23,14 @@ export default class CM_APIAccessPage{
     public async connectApp(appName : string){
         await this.app_name_fill.click();
         await this.app_name_fill.type(appName,{delay:200});
-        // this will select the first app to connect from the list if search result return the multple app options.
+        // this will select the first app to connect from the list if search result return the multiple app options.
         await this.app_name_list.click();
         await this.next_button.click();
         await this.target_live.click();
         await this.next_button.click();
         await this.save_button.click();
         // landing to the api page again
+        await this.api_link.waitFor();
         await this.api_link.click();
     }
-
 }

@@ -7,7 +7,7 @@ test.describe.only(`CM Portal POC`, () => {
         await cmLoginPage.visit(ENV.cmUrl + `atmosphere/`);
     });
 
-    test(`Add, Edit and Delete API`, async ({ cmLoginPage, cmHeaderSection, cmAddAPI, cmLandingPage, cmAPIDetailsPage }) => {
+    test.skip(`Add, Edit and Delete API`, async ({ cmLoginPage, cmHeaderSection, cmAddAPI, cmLandingPage, cmAPIDetailsPage }) => {
         await test.step(`Login with ${ENV.cmAdminUser}`, async () => {
             await cmLoginPage.login({ username: ENV.cmAdminUser, password: ENV.cmAdminPassword });
             expect(await cmLandingPage.titleText()).toBe(`Action Dashboard`);
@@ -31,7 +31,7 @@ test.describe.only(`CM Portal POC`, () => {
         });
     });
 
-    test(`Login to CM`, async ({ cmLoginPage, cmHeaderSection, cmAddAPP, cmLandingPage }) => {
+    test.skip(`Login to CM`, async ({ cmLoginPage, cmHeaderSection, cmAddAPP, cmLandingPage }) => {
         await test.step(`Login with ${ENV.cmAdminUser}`, async () => {
             await cmLoginPage.login({ username: ENV.cmAdminUser, password: ENV.cmAdminPassword });
             expect(await cmLandingPage.titleText()).toBe(`Action Dashboard`);
@@ -43,7 +43,7 @@ test.describe.only(`CM Portal POC`, () => {
         });
     });
 
-    test(`Create Contract between app and API`, async ({ cmLoginPage, cmLandingPage , cmHeaderSection, cmSearchObjectPage, cmApiOverviewPage, cmAPIAcsessPage , cmApiAppPage }) => {
+    test.skip(`Create Contract between app and API`, async ({ cmLoginPage, cmLandingPage , cmHeaderSection, cmSearchObjectPage, cmApiOverviewPage, cmAPIAccessPage: cmAPIAcsessPage , cmApiAppPage }) => {
         await test.step(`Login with ${ENV.cmAdminUser}`, async () => {
             await cmLoginPage.login({ username: ENV.cmAdminUser, password: ENV.cmAdminPassword });
             expect(await cmLandingPage.titleText()).toBe(`Action Dashboard`);

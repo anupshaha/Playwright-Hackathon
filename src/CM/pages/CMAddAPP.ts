@@ -17,9 +17,8 @@ export default class CMAddAPP {
         this.finishBtn= page.getByRole(`button`, { name: `Finish` });
     }
 
-    public async createAPP(){
-        const randomNum = Math.floor(Math.random() * 90 + 10);
-        await this.appName.fill(`App1` + randomNum);
+    public async createAPP(AppName){
+        await this.appName.fill(AppName);
         await this.appVersion.fill(`v1`);
         await this.finishBtn.click();
     }
