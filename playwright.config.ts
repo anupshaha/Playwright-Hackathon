@@ -8,7 +8,7 @@ if (!test_env || ![`local`, `qa-82`, `qa-2`].includes(test_env)) {
 }
 
 const config: PlaywrightTestConfig = {
-    timeout: 180 * 1000,
+    timeout: 240 * 1000,
     retries: 0,
     workers: 4,
     reporter: [
@@ -23,12 +23,12 @@ const config: PlaywrightTestConfig = {
     use: {
         headless: false,
         viewport: { width: 1280, height: 720 },
-        actionTimeout: 180 * 1000,
+        actionTimeout: 240 * 1000,
         ignoreHTTPSErrors: true,
-        video: "on",
-        screenshot: "on",
-        trace: "on",
-        storageState: 'storageState.json'
+        video: `on`,
+        screenshot: `on`,
+        trace: `on`,
+        storageState: `storageState.json`
     },
     globalSetup: `src/utils/GlobalSetup.ts`,
 
