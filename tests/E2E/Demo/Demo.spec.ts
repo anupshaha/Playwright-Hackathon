@@ -1,41 +1,37 @@
 import test, { expect } from '@utils/Fixtures';
 import ENV from '@utils/ENV';
+import Utilities from '@utils/utilities';
 
-test.describe.only(`E2E Flow for Hackathon Demo`, () => {
+test.describe.parallel(`E2E Flow for Hackathon Demo`, () => {
 
-    let APIname;
-    let appId;
-    let appName;
+    let APIname : string;
+    let appId : string;
+    let appName : string;
+    let util : Utilities;
 
-    // test.beforeEach(async ({ cmLoginPage, cmLandingPage }) => {
-    //     await cmLoginPage.visit(ENV.cmUrl + `atmosphere/`);
-    //     await cmLoginPage.login({ username: ENV.cmAdminUser, password: ENV.cmAdminPassword });
-    //     expect(await cmLandingPage.titleText()).toBe(`Action Dashboard`);
-    // });
+     test.beforeAll( () => {
+        util = new Utilities();
+     });
 
-    test.skip(`Add API, APP and Create Contract`, async ({ cmLoginPage, cmLandingPage, cmHeaderSection, cmAddAPI, cmAPIDetailsPage, cmAddAPP, cmSearchObjectPage, cmApiOverviewPage, cmAPIAccessPage: cmAPIAccessPage, cmApiAppPage, cmAPPDetailsPage }) => {
+    test(`Add API, APP and Create Contract`, async ({ cmLoginPage, cmLandingPage, cmHeaderSection, cmAddAPI, cmAPIDetailsPage, cmAddAPP, cmSearchObjectPage, cmApiOverviewPage, cmAPIAccessPage: cmAPIAccessPage, cmApiAppPage, cmAPPDetailsPage }) => {
 
         await test.step(`Login to CM`, async () => {
             await cmLoginPage.visit(ENV.cmUrl + `atmosphere/`);
-            await cmLoginPage.login({ username: ENV.cmAdminUser, password: ENV.cmAdminPassword });
-            expect(await cmLandingPage.titleText()).toBe(`Action Dashboard`);
         });
 
         await test.step(`Add API`, async () => {
             await cmHeaderSection.selectHeaderOption(`APIs`, `Add API`);
             await cmAddAPI.createAPIusingDocument(`URL`);
             APIname = await cmAPIDetailsPage.getAPIName();
-            console.log(`New API Name:: ` + APIname);
         });
 
         await test.step(`Add APP`, async () => {
-            const randomNum = Math.floor(Math.random() * 90 + 10);
+            const randomNum = Math.floor(Math.random() * 900 + 10);
             appName = `App1` + randomNum;
             await cmHeaderSection.selectHeaderOption(`Apps`, `Add App`);
             await cmAddAPP.createAPP(appName);
             await expect(await cmAPPDetailsPage.getAppName()).toBe(appName);
             appId = await cmAPPDetailsPage.getAppId();
-            console.log(`New APP ID:: ` + appId);
         });
 
         await test.step(`Create Contract`, async () => {
@@ -47,32 +43,16 @@ test.describe.only(`E2E Flow for Hackathon Demo`, () => {
         });
     });
 
-    test.only(`Verify API Contract Details`,async({request,baseURL}) =>{
-        const appId1 =  `DCiA5tFZK50q0eu26bKFrGtKJjTAl04T1H1o6nOH-automation2022-1`; 
+    test(`Verify API Contract Details`,async({request,baseURL}) =>{
+        let appId1 =  `iZxPcWiZibSkVX9pnI0alR6XXxPI30BaS8VtmMfi.automation2022-1`; 
         const _response = await request.get(`${ENV.cmUrl}api/apps/versions/${appId1}/contracts`, {headers:{
             'Accept': `application/json`,
             'Content-Type' : 'application/json'
         }});
-        // expect(await _response.ok()).toBeTruthy();
-        // expect(await _response.status()).toBe(200);
+        expect(await _response.ok()).toBeTruthy();
+        expect(await _response.status()).toBe(200);
         const obj = await _response.json();
-        console.log(obj);
-        console.log(obj.channel.item[0].EntityReferences.EntityReference[1].Title);
+        let actual_api_name : string = await obj.channel.item[0].EntityReferences.EntityReference[1].Title;
+        expect(await actual_api_name).toBe('Swagger_Petstore33');
       });
-
-    // test.skip(`Login to CM`, async ({ cmHeaderSection, cmAddAPI, cmAPIDetailsPage }) => {
-
-    //     await test.step(`Add API`, async () => {
-    //         await cmHeaderSection.selectHeaderOption(`APIs`, `Add API`);
-    //         await cmAddAPI.createAPIusingDocument(`URL`);
-    //         console.log(`New API Name:: ` + await cmAPIDetailsPage.getAPIName());
-    //     });
-
-    //     await test.step(`Rename API`, async () => {
-    //         const randomNum = Math.floor(Math.random() * 90 + 10);
-    //         await cmAPIDetailsPage.selectOptionFromMenu(`Details`);
-    //         await cmAPIDetailsPage.editAPIDetails(`Swagger_Petstore1_` + randomNum);
-    //     });
-
-    // });
 });
