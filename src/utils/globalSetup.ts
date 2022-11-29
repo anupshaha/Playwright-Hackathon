@@ -20,7 +20,7 @@ async function GlobalSetup() {
   }
 
   const requestContext = await request.newContext();
-    await requestContext.post(`http://automation2022-1-poll-mysql.aws.akana.roguewave.com:7900/api/login`,{
+    await requestContext.post(`http://automation-mysql80-mongo42.aws.akana.roguewave.com:7900/api/login`,{
     data:{
       "email":`administrator@atmosphere`,
       "password":`Passw0rd!`
