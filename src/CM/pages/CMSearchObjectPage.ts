@@ -26,10 +26,10 @@ export default class CMSearchObjectPage{
         */
         //await this.object_type.selectOption(object);
         await this.keyward_to_search.click();
-        await this.keyward_to_search.fill(search_keywaord);
+        await this.keyward_to_search.type(search_keywaord,{delay:100});
         await this.Search.click();
-        console.log(await this.searchNotFound.innerText());
         if((await this.searchNotFound.innerText()).startsWith(`No search results found`)){
+            await this.keyward_to_search.click();
             await this.Search.click();
         }
         await this.object_link.click();

@@ -25,15 +25,9 @@ const config: PlaywrightTestConfig = {
         viewport: { width: 1280, height: 720 },
         actionTimeout: 180 * 1000,
         ignoreHTTPSErrors: true,
-        video: `retain-on-failure`,
-        screenshot: `only-on-failure`,
-        trace: `retain-on-failure`,
-        // All requests we send go to this API endpoint.
-        baseURL: `http://automation2022-1-poll-mysql.aws.akana.roguewave.com:7900/`,
-        extraHTTPHeaders: {
-            'Accept': `application/json`,
-            'Content-Type': 'application/json'
-        },
+        video: "on",
+        screenshot: "on",
+        trace: "on",
         storageState: 'storageState.json'
     },
     globalSetup: `src/utils/GlobalSetup.ts`,
