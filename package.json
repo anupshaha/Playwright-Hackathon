@@ -12,7 +12,9 @@
     "allure:generate": "allure generate ./allure-results --clean",
     "allure:open": "allure open ./allure-report",
     "allure:serve": "allure serve",
-    "allure": "npm run allure:generate & npm run allure:serve"
+    "allure": "npm run allure:generate & npm run allure:serve",
+    "playwright-report": "npx playwright show-report playwright-report/html",
+    "test:chrome:report" :  "npm run test:chrome & npm run allure"
   },
   "author": "Anup Shaha",
   "license": "ISC",
