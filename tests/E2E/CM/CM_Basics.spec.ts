@@ -4,7 +4,7 @@ import ENV from '@utils/ENV';
 test.describe(`CM Portal POC`, () => {
 
     test.beforeEach(async ({ cmLoginPage }) => {
-        await cmLoginPage.visit(ENV.cmUrl);
+        await cmLoginPage.visit(ENV.cmUrl+`atmosphere/`);
     });
 
     test(`Add, Edit and Delete API`, async({cmLoginPage, cmHeaderSection, cmAddAPI, cmLandingPage, cmAPIDetailsPage})=>{
